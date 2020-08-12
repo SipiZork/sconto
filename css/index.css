@@ -264,7 +264,8 @@ div[class^="col"] {
   position: absolute;
   bottom: -.5rem;
   left: 0;
-  width: 50%;
+  min-width: 12rem;
+  width: 40%;
   height: 3px;
   background-color: #0082A4;
 }
