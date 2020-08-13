@@ -208,9 +208,50 @@ div[class^="col"] {
   transform: translateX(-12.5rem);
 }
 
+.main--photo {
+  height: 50vh;
+  position: relative;
+}
+
+.main--photo img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: 50% 10%;
+}
+
+.main--photo--text {
+  background-color: rgba(255,255,255, .8);
+  border-radius: 1rem;
+  border: 1px solid #0082A4;
+  position: absolute;
+  top: 10%;
+  left: .5rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.main--photo--text h1 {
+  font-size: 1.4rem;
+}
+
+.main--photo--text h1 span {
+  color: #0082A4;
+}
+
+.main--photo--text h1:after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: #0082A4;
+} 
+
+.main--photo--text p {
+  padding-left: 10px;
+  font-size: 1rem;
+}
+
 .introduction {
   margin-top: 2rem;
-  min-height: 25rem;
   overflow: hidden;
 }
 
@@ -218,13 +259,12 @@ div[class^="col"] {
   background-color: black;
   padding: 0 !important;
   position: relative;
-  max-height: 25rem;
+  height: 30rem;
 }
 
 .introduction img {
   width: 100%;
-  height: 100%;
-  max-height: 25rem;
+  height: 30rem;
   object-fit: cover;
   object-position: center;
   opacity: .7;
@@ -233,7 +273,7 @@ div[class^="col"] {
 .introduction .img--title {
   position: absolute;
   top: 4rem;
-  left: 14px;
+  left: 0;
   width: 20rem;
   height: 4.5rem;
   font-size: 1.2rem;
@@ -257,7 +297,7 @@ div[class^="col"] {
 }
 
 .content h3 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   position: relative;
   margin-bottom: 1.3rem;
 }
@@ -276,26 +316,24 @@ div[class^="col"] {
 
 .content p {
   padding: 0 10px;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .services {
-  min-height: 30rem;
-  margin: 5rem 0;
+  margin: 4rem 0;
 }
 
 .services div[class^="col"]  {
-  min-height: 5rem;
   padding: 0 !important;
 }
 
 .services--content--holder {
   padding: 10px;
   margin-bottom: 6rem;
+  height: 100%;
 }
 
 .services--content {
-  border: 1px solid green;
   width: 95%;
   padding: 3.5rem 0 0 10px;
   border: 3px solid white;
@@ -303,12 +341,17 @@ div[class^="col"] {
 
 .content--text {
   font-size: 1rem;
+  height: 100%;
 }
 
 .content--text h3 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   position: relative;
   margin-bottom: 1.3rem;
+}
+
+.content--text p {
+  font-size: .9rem;
 }
 
 .content--text h3:after {
@@ -344,6 +387,21 @@ div[class^="col"] {
 
 
 @media only screen and (min-width: 992px) {
+  
+  .main--photo--text {
+    left: 3rem;
+    padding: 2rem 2rem 1rem 2rem;
+  }
+
+  .main--photo--text h1 {
+    font-size: 1.8rem;
+  }
+
+  .main--photo--text p {
+    padding-left: 10px;
+    font-size: 1.1rem;
+  }
+  
   .header {
     height: 6.25rem;
   }
@@ -361,9 +419,22 @@ div[class^="col"] {
   .services--content {
     border: 3px solid white;
     width: 85%;
+    height: 100%;
     padding: 10px 0 0 10px;
     padding-right: 4rem;
     position: relative;
+  }
+
+  .services--content--holder {
+    margin-bottom: 0rem;
+  }
+
+  .content--text h3 {
+    font-size: 1.8rem;
+  }
+
+  .content--text p {
+    font-size: 1rem;
   }
 
   .services--content--holder.right--pic > .services--content > .content--pic {
@@ -380,6 +451,10 @@ div[class^="col"] {
 
   .services--content--holder.left--pic > .services--content {
     padding: 10px 0 0 5rem;
+  }
+
+  .introduction {
+    height: 30rem;
   }
 }
 
