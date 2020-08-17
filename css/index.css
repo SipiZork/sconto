@@ -8,6 +8,7 @@ body {
 
 div[class^="col"] {
   order: 1px solid red;
+  min-height: 4rem;
 }
 
 .wrapper {
@@ -59,7 +60,6 @@ div[class^="col"] {
 
 .navigation--item a {
   text-decoration: none;
-  ackground-color: #0082A4;
   width: 100%;
   height: 100%;
   padding: 0 0.625rem;;
@@ -308,7 +308,6 @@ div[class^="col"] {
   position: absolute;
   bottom: -.5rem;
   left: 0;
-  min-width: 12rem;
   width: 40%;
   height: 3px;
   background-color: #0082A4;
@@ -360,8 +359,8 @@ div[class^="col"] {
   position: absolute;
   bottom: -.5rem;
   left: 0;
-  min-width: 12rem;
-  width: 40%;
+  width: 12rem;
+  max-width: 100%;
   height: 3px;
   background-color: #0082A4;
 }
@@ -385,6 +384,177 @@ div[class^="col"] {
   top: -4rem;
 }
 
+.contacts--us {
+  padding-top: 2rem;
+  background-color: white;
+}
+
+.contacts--info--text {
+  padding: 10px;
+}
+
+.contacts--info--text .contacts--section {
+  margin-bottom: 1.5rem;
+}
+
+.contacts--info--text h3 {
+  font-size: 1.4rem;
+  position: relative;
+  margin-bottom: 1.3rem;
+}
+
+.contacts--info--text h3:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  width: 20rem;
+  max-width: 100%;
+  height: 3px;
+  background-color: #0082A4;
+}
+
+.contacts--info--text p {
+  font-size: .9rem;
+  margin: 0 !important;
+}
+
+.contacts--info--text p {
+  font-size: .9rem;
+  margin-bottom: 1.5rem;
+}
+
+.contacts--info--text p.blue,
+.contacts--info--text span.blue  {
+  color: #0082A4;
+}
+
+.contacts--info--text p.big {
+  font-size: 1rem;
+}
+
+.contacts--info--text p.small {
+  font-size: 0.8rem;
+}
+
+.form--group--holder {
+  margin-top: 1rem;
+}
+
+
+.form--group--holder button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #0082A4;
+  font-size: 1.5rem;
+  color: white;
+}
+.input--col {
+  width: 100% !important;
+  height: 40px;
+  border: none;
+  position: relative;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.input--col.message {
+  height: 120px;
+}
+
+.input--col span {
+  position: absolute;
+  left: 10px;
+  display: block;
+  width: 90%;
+  font-size: 1rem;
+  top: 1rem;
+  opacity: .8;
+  user-select: none;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+.input--col input,
+.input--col textarea {
+  width: calc(100% - 20px);
+  height: 100%;
+  border: none;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.input--col input:focus + span,
+.input--col textarea:focus + span,
+.input--col input:valid + span,
+.input--col textarea:valid + span {
+  transform: translateY(-25px);
+  font-size: .8rem;
+}
+
+.input--col:after {
+  content: '';
+  width: 100%;
+  display: block;
+  height: .125rem;
+  background-color: #0082A4;
+  position: absolute;
+  bottom: 5px;
+  width: calc(100% - 20px);
+  left: 5px;
+}
+
+.footer {
+  background-color: rgb(50,50,50);
+  color: white;
+  padding: 1rem 0;
+}
+
+.footer img {
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+
+.footer .blue {
+  color: #0082A4;
+}
+
+.footer h3 {
+  font-size: 1.4rem;
+}
+
+.footer li {
+  list-style-type: '| ';
+  color: #0082A4;
+  font-size: 1.1rem;
+  margin-bottom: .3rem;
+  margin-left: .5rem;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover li p {
+  color: #0082A4;
+}
+
+.map {
+  padding: 10px;
+}
+
+.footer li p {
+  color: white;
+  display: inline-block;
+  margin: 0;
+}
 
 @media only screen and (min-width: 992px) {
   
@@ -430,7 +600,7 @@ div[class^="col"] {
   }
 
   .content--text h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .content--text p {
@@ -456,6 +626,29 @@ div[class^="col"] {
   .introduction {
     height: 30rem;
   }
+
+  .contacts--info--text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .contacts--info--text p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contacts--info--text p.blue,
+  .contacts--info--text span.blue  {
+    color: #0082A4;
+  }
+  
+  .contacts--info--text p.big {
+    font-size: 1.2rem;
+  }
+  
+  .contacts--info--text p.small {
+    font-size: 0.9rem;
+  }
+  
 }
 
 @media only screen and (min-width: 1010px) {

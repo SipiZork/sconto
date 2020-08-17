@@ -6,6 +6,13 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" class="css">
   <link rel="stylesheet" href="css/index.css" class="css">
   <title>S Conto Balance Kft. - Kezdőlap</title>
+  <style>
+    .map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -151,7 +158,102 @@
         </div>
       </div>
     </section>
+    <section class="contacts--us">
+      <div class="row">
+        <div class="col-10 offset-1 col-lg-5 offset-lg-1">
+          <div class="contacts--info--holder">
+            <div class="contacts--info--text">
+              <h3>Keressen minket bizalommal</h3>
+              <div class="contacts--section">
+                <p>
+                  Suspendisse tempus ipsum eu augue eleifend, ac auctor leo vestibulum. Nullam sagittis sem in turpis dapibus porttitor. Integer felis mi, semper eu tristique vel, pellentesque in magna. Proin at laoreet urna. Integer a blandit tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla urna odio, tempus sed dui at, porttitor vestibulum turpis. Mauris dui ex, sagittis ut pulvinar sed, tincidunt non tortor.
+                </p>
+              </div>
+              <div class="contacts--section">
+                <p class="blue big">Sipos Györgyi</p>
+                <p class="small">Tulajdonos</p>
+              </div>
+              <div class="contacts--section">
+                <p>
+                  <span class="blue">Mobil</span>: +36 30 1234 567
+                </p>
+                <p>
+                  <span class="blue">Email</span>: gyorgyisipos@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-10 offset-1 col-lg-5 offset-lg-0">
+          <div class="form-group form--group--holder">
+            <div class="row">
+              <div class="col-12 col-lg-6 input--col">
+                <input type="text" name="name" class="form-control" required />
+                <span>Adja meg teljes nevét</span>
+              </div>
+              <div class="col-12 col-lg-6 input--col">
+                <input type="text" name="email" class="form-control" required />
+                <span>Adja meg email címét</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 offset input--col">
+                <input type="text" name="pahone" class="form-control" autocomplete="off" required />
+                <span>Adja meg telefonszámát</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 input--col message">
+                <textarea name="message" id="message" class="form-control" required></textarea>
+                <span>Adja meg az üzenetét</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 offset-4">
+                <button type="submit" id="sender-btn">Küldés</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-10 col-lg-4 mb-4 mb-lg-0">
+          <img src="assets/img/logo.svg" alt="logo">
+          <p><span class="blue">CÉGJEGYZÉKSZÁM:</span> 12 34 567890</p>
+          <p><span class="blue">ADÓSZÁM:</span> 12345678-1-23</p>
+          <p><span class="blue">CÍM: </span>1095 Budapest, Tinódi utca 12</p>
+        </div>
+        <div class="col-10 col-lg-3 mb-4 mb-lg-0">
+          <h3>Oldaltérkép</h3>
+          <a href="index.html"><li><p>Kezdőlap</p></li></a>
+          <a href="about.html"><li><p>Rólunk</p></li></a>
+          <a href="services.html"><li><p>Szolgálatások</p></li></a>
+          <a href="contact.html"><li><p>Kapcsolat</p></li></a>
+          <a href="offer.html"><li><p>Ajánlatkérés</p></li></a>
+        </div>
+        <div class="col-10 col-lg-4 mb-4 mb-lg-0">
+          <div id="map" class="map"></div>
+        </div>
+      </div>
+    </section>
   </div>
   <script src="js/hamburger.js"></script>
+  <script src="js/send-message.js"></script>
+  <script type="text/javascript">
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([19.069796, 47.479173]),
+        zoom: 17
+      })
+    });
+  </script>
 </body>
 </html>
